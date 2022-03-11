@@ -54,8 +54,6 @@ const createPost = (post) => {
     const image = post.image;
     const div = document.createElement( "article" );
     div.classList.add( "post" );
-    console.log(post.comments[0].user);
-    console.log(post.comments[0].text);
     
     div.innerHTML = `
               <div class="post__header">
@@ -155,7 +153,7 @@ const displayLikedPosts = () => {
 
 const displayReportedPosts = () => {
     const reportedPosts = getReportedPosts();
-    posts.forEach((post) => {
+    reportedPosts.forEach((post) => {
         const div = createPost(post);
         document.getElementById( "reported" ).appendChild(div);
     });
